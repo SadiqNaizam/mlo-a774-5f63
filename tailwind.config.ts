@@ -64,10 +64,16 @@ export default {
 				}
 			},
 			borderRadius: {
-				lg: 'var(--radius)',
-				md: 'calc(var(--radius) - 2px)',
-				sm: 'calc(var(--radius) - 4px)'
+        // --radius is 0.375rem (6px)
+        // Provides a 4px, 6px, 8px range as per design input "4-8px radius"
+				lg: 'calc(var(--radius) + 0.125rem)', // 0.5rem / 8px
+				md: 'var(--radius)', // 0.375rem / 6px
+				sm: 'calc(var(--radius) - 0.125rem)'  // 0.25rem / 4px
 			},
+      fontFamily: {
+        sans: ['var(--font-sans)', 'system-ui', '-apple-system', 'BlinkMacSystemFont', '"Segoe UI"', 'Roboto', '"Helvetica Neue"', 'Arial', '"Noto Sans"', 'sans-serif', '"Apple Color Emoji"', '"Segoe UI Emoji"', '"Segoe UI Symbol"', '"Noto Color Emoji"'],
+        mono: ['var(--font-mono)', 'ui-monospace', 'SFMono-Regular', 'Menlo', 'Monaco', 'Consolas', '"Liberation Mono"', '"Courier New"', 'monospace'],
+      },
 			keyframes: {
 				'accordion-down': {
 					from: {
